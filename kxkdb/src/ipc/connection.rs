@@ -910,7 +910,6 @@ async fn connect_tcp_impl(host: &str, port: u16) -> Result<TcpStream> {
         // Return if this IP address is valid
         match TcpStream::connect(&host_port).await {
             Ok(socket) => {
-                println!("connected: {}", host_port);
                 return Ok(socket);
             }
             Err(_) => {
